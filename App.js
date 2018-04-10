@@ -13,6 +13,7 @@ import {
 } from 'react-native';
 
 import Header from './src/components/header';
+import FeedList from './src/components/feed_list';
 
 const instructions = Platform.select({
   ios: 'Press Cmd+R to reload,\n' +
@@ -27,15 +28,7 @@ export default class App extends Component<Props> {
     return (
       <View >
         <Header />
-        <Text style={styles.welcome}>
-          Welcome to DocNow test!
-        </Text>
-        <Text style={styles.instructions}>
-          To get started, edit App.js
-        </Text>
-        <Text style={styles.instructions}>
-          {instructions}
-        </Text>
+        <FeedList />
       </View>
     );
   }
