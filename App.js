@@ -12,6 +12,8 @@ import {
   View
 } from 'react-native';
 
+import Header from './src/components/header';
+
 const instructions = Platform.select({
   ios: 'Press Cmd+R to reload,\n' +
     'Cmd+D or shake for dev menu',
@@ -23,9 +25,10 @@ type Props = {};
 export default class App extends Component<Props> {
   render() {
     return (
-      <View style={styles.container}>
+      <View >
+        <Header />
         <Text style={styles.welcome}>
-          Welcome to React Native!
+          Welcome to DocNow test!
         </Text>
         <Text style={styles.instructions}>
           To get started, edit App.js
@@ -43,7 +46,7 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#F5FCFF',
+    backgroundColor: '#fff',
   },
   welcome: {
     fontSize: 20,
