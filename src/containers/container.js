@@ -13,10 +13,15 @@ const Container = (props) => {
 
 const styles = {
   containerStyle: {
+    flex: 1,
+    // justifyContent: 'flex-start',
+    // alignItems: 'flex-end',
     borderWidth: 1,
     borderRadius: 2,
-    borderColor: '#ddd',
+    // borderColor: '#ddd',
     // borderBottomWidth: 0,
+    borderStyle: 'solid',
+    borderColor: 'green', // red
     shadowColor: '#000',
     shadowOffset: { width: 0, height: 2 },
     shadowOpacity: 0.1,

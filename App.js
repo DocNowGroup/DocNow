@@ -25,8 +25,9 @@ const instructions = Platform.select({
 type Props = {};
 export default class App extends Component<Props> {
   render() {
+    const { container } = styles;
     return (
-      <View >
+      <View style={container}>
         <Header />
         <FeedList />
       </View>
@@ -37,8 +38,8 @@ export default class App extends Component<Props> {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
+    // justifyContent: 'center',
+    // alignItems: 'center',
     backgroundColor: '#fff',
   },
   welcome: {
