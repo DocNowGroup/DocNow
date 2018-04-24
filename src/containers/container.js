@@ -21,15 +21,16 @@ const styles = {
     // borderColor: '#ddd',
     // borderBottomWidth: 0,
     borderStyle: 'solid',
-    borderColor: 'green', // red
+    borderColor: 'green', // green
     shadowColor: '#000',
     shadowOffset: { width: 0, height: 2 },
     shadowOpacity: 0.1,
     shadowRadius: 2,
     elevation: 1,
-    marginLeft: 5,
-    marginRight: 5,
-    marginTop: 10
+    backgroundColor: '#F0F0F0', // grey
+    // marginLeft: 5,
+    // marginRight: 5,
+    // marginTop: 10
   }
 }
 

@@ -16,9 +16,8 @@ const ListItem = ({ patientRow }) => {
 const styles = {
   listItemContainer: {
     flexDirection: 'row',
-    margin: 0,
-    marginBottom: 2,
-    justifyContent: 'space-around',
+    // margin:,
+    // marginBottom: 2,
     borderWidth: 1,
     borderColor: 'black',
   },
@@ -28,6 +27,8 @@ const styles = {
     borderColor: 'black',
     flex: 1 ,
     textAlign: 'center',
+    // justifyContent: 'center',
+    // alignItems: 'center'
   },
 
   issueItem: {
