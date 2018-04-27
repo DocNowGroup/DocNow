@@ -12,17 +12,18 @@ class FeedList extends Component {
     super(props);
     this.state = {
       items: [
-        {id: 1,date:'4/21', number: '4-1', patient:'Smith', issue: 'Too flexible'},
-        {id: 2,date:'4/21', number: '10-1', patient:'John', issue: 'broken bones'},
-        {id: 3,date:'4/21', number: '4-5', patient:'Ryan', issue: 'complains a lot'},
-        {id: 4,date:'4/21', number: '5-3', patient:'Jack', issue: 'angry and wont stop complaining,angry and wont stop complaining,'},
-        {id: 5,date:'4/21', number: '2-3', patient:'Katie', issue: 'no idea'},
-        {id: 6,date:'4/21', number: '1-10', patient:'Suzzie', issue: 'death'}
+        // {id: 1, date:'4/21', number: '4-1', patient:'Smith', issue: 'Too flexible'},
+        // {id: 2, date:'4/21', number: '10-1', patient:'John', issue: 'broken bones'},
+        // {id: 3, date:'4/21', number: '4-5', patient:'Ryan', issue: 'complains a lot'},
+        // {id: 4, date:'4/21', number: '5-3', patient:'Jack', issue: 'angry and wont stop complaining,angry and wont stop complaining,'},
+        // {id: 5, date:'4/21', number: '2-3', patient:'Katie', issue: 'no idea'},
+        // {id: 6, date:'4/21', number: '1-10', patient:'Suzzie', issue: 'death'}
       ],
       newForm: false,
     }
     this.displayItems = this.displayItems.bind(this);
-    this.pressButton = this.pressButton.bind(this);
+    this.onCancelPress = this.onCancelPress.bind(this);
+    this.onSave = this.onSave.bind(this);
   }
 
   displayItems() {
@@ -31,34 +32,35 @@ class FeedList extends Component {
     });
   }
 
-  pressButton() {
+  onCancelPress() {
     let current = !this.state.newForm;
     this.setState({
       newForm: current
     })
   }
 
+  onSave(newInfo) {
+    let current = !this.state.newForm;
+    console.log('newInfo from feed-list: ',newInfo)
+    this.setState({
+      items: [...this.state.items, newInfo],
+      newForm: current,
+    })
+  }
+
+
+
   render() {
-    const { itemList, button, items, addPatientButtons } = styles;
+    const { itemList, button, items } = styles;
 
     if (this.state.newForm) {
       return (
         <Container >
-          <PatientForm />
-          <View style={addPatientButtons}>
-            <View style={button}>
-              <Button
-                title='Save    '
-                onPress={this.pressButton}
-              />
-            </View>
-            <View style={button}>
-              <Button 
-                title='Cancel'
-                onPress={this.pressButton}
-              />
-            </View>
-          </View>
+          <PatientForm 
+            onCancelPress={this.onCancelPress} 
+            onSave={this.onSave} 
+          />
+          
         </Container>
       )
     }
@@ -72,7 +74,7 @@ class FeedList extends Component {
         </View>
         <View style={button}>
           <Button 
-            onPress={this.pressButton} 
+            onPress={this.onCancelPress} 
             title='Add Patient'
           />
         </View>
