@@ -6,7 +6,7 @@ const Header = () => {
   return (
     <View style={viewStyle}>
       <Text>Date</Text>
-      <Text style={textStyle}>DocNow</Text>
+      <Text style={textStyle}>TestRun</Text>
       <Text>Time</Text>
     </View>
   );
